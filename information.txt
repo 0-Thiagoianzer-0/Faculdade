@@ -1,5 +1,0 @@
-This is a simple demonstration of a simple crud with a graphical interface, using mysql, gtk+ and C
-
-you need the mysql and gtk+ libraries
-
-add these parameters in your compiler "-lmysqlclient `pkg-config --cflags --libs gtk+-3.0`"

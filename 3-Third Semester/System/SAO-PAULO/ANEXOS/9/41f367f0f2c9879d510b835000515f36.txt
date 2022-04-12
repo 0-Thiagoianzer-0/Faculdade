@@ -1,0 +1,52 @@
+Popular tabelas de cadastros com a função;
+
+Filtros atualizados:
+À encaminhar - Azul claro
+Encaminhado - Cinza
+Pendentes - Fora do Prazo - Vermelha
+Em andamento - Amarelo
+Concluídos - Verde
+Indeferidos - Laranja
+
+Checkbox 
+Botão mostrar historico ou não mostrar;
+
+Adicionar dados da pessoa;
+Mostrar servidor que está fazendo atendimento;
+Anexos do protocolo;
+Mostrar data e hora;
+
+Botão Atender{
+	Concluir Protocolo - Atender Protocolo;
+}
+
+Fazer a pergunta se deseja concluir o atendimento;
+Sim - desabilita o atender, exigência; habilita concluir;
+Não - deixa desabilitado o botão concluir;
+
+-----SAUDE-----
+Tipo de Protocolo - Medicamento;
+Criar tela de cadastro de medicamento{
+	Nome, quantidade;
+}
+
+-----ASSITENCIA SOCIAL-------
+Quando for cesta basica, mostrar todos os itens da cesta, e na hora de concluir, mostrar o que tem e o que não tem!
+
+Vai ser criado um tipo de protocolo unico, mas internamente será replicado para cada orgão responsável!
+
+Poder selecionar para quem vai fazer a exigência!
+
+Na hora de concluir, poder concluir na hora, ou encaminhar conclusão para o setor desejado!
+
+Criar uma tabela unica de itens, com os seguintes campos:
+1. item;
+2. orgão; opção vincular todos os orgão;
+3. tipo de protocolo;
+
+Encaminhado - Atender, Reencaminhar;
+Em Atendimento - Exigencia, Concluir, Indeferir, Reencaminhar
+Concluido - Desabilita todos;
+Indeferido - Desabilita todos;
+
+Alterar prioridade somente supervisor;

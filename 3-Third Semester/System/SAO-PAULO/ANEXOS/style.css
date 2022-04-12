@@ -1,0 +1,17 @@
+#progressBar {
+    position: relative;
+    display: none;
+    background: linear-gradient(135deg, rgb(34, 130, 227) 0%, rgb(9, 226, 51) 100%);
+    height: 16px;
+    width: 0;
+    line-height: 16px;
+    color: #fff;
+    font-size: 0.75em;
+    overflow: hidden;
+}
+
+#return {
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="./node_modules/fullcalendar/dist/fullcalendar.min.css" />
+		<link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+		<style>
+			#calendar {}
+			#calendar a.fc-event {
+				color: #fff;
+				/* bootstrap default styles make it black. undo */
+			}
+			.cont-calendario {
+				width: 100%;
+				max-width: 900px;
+				padding: 30px;
+				background-color: #fff;
+				border-radius: 10px;
+				-webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.5);
+				-moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.5);
+				box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.5);
+			}
+			.legenda {
+				width: 150px;
+				height: 300px;
+				float: left;
+				margin-top: 55px;
+			}
+			.calendario {
+				width: calc(100% - 150px);
+				float: left;
+			}
+			.checkbox_cores {
+				width: 15px;
+				height: 15px;
+				border-radius: 3px;
+				margin-top: 5px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div align="center">
+			<div class="cont-calendario">
+				<div style="display: table;">
+					<div class="legenda">
+						<table>
+							<tr>
+								<td>
+									<table>
+										<tr>
+											<td style="padding-right: 5px;">
+												<div class="checkbox_cores" style="background-color: #AAAAAA;"></div>
+											</td>
+											<td>Pendentes</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox_cores" style="background-color: #FFD700;"></div>
+											</td>
+											<td>Em Atendimento</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox_cores" style="background-color: #008000;"></div>
+											</td>
+											<td>Concluídos</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox_cores" style="background-color: #FF0000;"></div>
+											</td>
+											<td>Atrasados</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox_cores" style="background-color: #FFA500;"></div>
+											</td>
+											<td>Cancelados</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="calendario">
+						<div id="calendar"></div>
+						<div class="cria-a"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<script src="./node_modules/moment/min/moment.min.js"></script>
+<script src="./node_modules/popper/popper.min.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./node_modules/fullcalendar/dist/fullcalendar.min.js"></script>
+<script src="./node_modules/fullcalendar/dist/locale/pt-br.js"></script>
+
+<script>
+    $(document).ready(function () {
+        carregaCalendario();
+    })
+
+    function carregaCalendario() {
+        fetch("consulta/calendario.php", {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            }
+        }).then((response) => response.json()).then((data) => {
+            let eventos = []
+            data.resultado.map((item, key) => {
+                eventos[key] = {
+                    title: item.titulo,
+                    description: item.descricao,
+                    start: item.data_abertura,
+                    id: item.codigo,
+                    color: item.cor_exibicao
+                }
+            })
+
+            $('#calendar').fullCalendar({
+                defaultView: 'month',
+                eventRender: function (eventObj, $el) {
+                    $el.popover({
+                        title: eventObj.title,
+                        content: eventObj.description,
+                        trigger: 'hover',
+                        placement: 'top',
+                        container: 'body',
+                        rendering: 'background',
+                        locale: "pt-br"
+                    });
+                },
+                eventClick: function (calEvent, jsEvent, view) {
+                    abreSolicitacaoTrabalho(calEvent.id);
+                },
+                events: eventos
+            });
+        }).catch(function (err) {
+            console.error('Failed retrieving information', err);
+        });
+
+    }
+
+    function abreSolicitacaoTrabalho(id) {
+        window.location = "atende_servico.php?id=" + id
+    }
+</script>

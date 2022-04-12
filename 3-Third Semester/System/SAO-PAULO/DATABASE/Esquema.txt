@@ -1,0 +1,65 @@
+1)CADASTRO
+	PESSOA{
+		codigo_pessoa
+		nome
+		razao_social      
+		tipo(fisica/juridica)
+		cpf
+		rg
+		cnpj
+		sexo(masculino/feminino)
+		endereco
+		numero
+		telefone_1
+		telefone_2
+		ativo(true/false)       
+	}
+
+	ESTADO{
+		codigo_estado
+		nome
+		sigla
+		ativo(true/false)
+	}
+
+	CIDADE{
+		codigo_cidade
+		nome
+		codigo_estado	
+		ativo(true/false)
+	}
+
+	CIDADE_CEP{
+		codigo_cidade
+		logradouro
+		bairro
+		cep
+		ativo(true/false)
+	}
+
+	PRODUTO{
+		codigo_produto
+		nome
+		codigo_tipo_produto
+		cor
+		espessura(mm)
+		quantidade
+		unidade_medida(unidades/metros)
+		observacao
+		ativo(true/false)		
+	}
+
+	TIPO_PRODUTO{
+		codigo_tipo_produto
+		nome
+		descricao
+		ativo(true/false)	
+	}
+
+	USUARIO{
+		codigo_usuario
+		codigo_pessoa
+		usuario
+		senha
+		ativo(true/false)
+	}

@@ -1,0 +1,32 @@
+#tabelaAnexo{
+	width:100%;
+	margin:0 auto;
+	border:0;
+	box-shadow: 0 5px 30px darkgrey;
+	border-spacing: 0;
+}
+
+/**COR CABEÇALHO TABELHA**/
+#tabelaAnexo thead th{
+	font-weight: bold;
+	background-color: #4682B4;
+	color:white;
+	padding:5px 10px;
+	text-align: center;
+}
+
+#tabelaAnexo tr td{
+	padding:5px 10px;
+	text-align: center;
+	cursor: pointer;
+}
+
+/**Cores**/
+#tabelaAnexo tr:nth-child(odd){
+	background-color: #eee;
+}
+
+/**Cor quando passar por cima**/
+#tabelaAnexo tr:hover td{
+	background-color: #EEE8AA;
+}

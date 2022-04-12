@@ -1,0 +1,1 @@
+Cufon.registerFont({"w":72,"face":{"font-family":"Bilbo","font-weight":400,"font-stretch":"normal","units-per-em":"360","panose-1":"2 0 0 0 0 0 0 0 0 0","ascent":"288","descent":"-72","x-height":"7","bbox":"-65.3192 -254 315 126","underline-thickness":"18","underline-position":"-18","stemh":"7","stemv":"19","unicode":"utf-8"}});

@@ -1,0 +1,32 @@
+#tabelaMonitora{
+	width:100%;
+	margin:0 auto;
+	border:0;
+	box-shadow: 0 5px 30px darkgrey;
+	border-spacing: 0;
+}
+
+/**COR CABEÇALHO TABELHA**/
+#tabelaMonitora thead th{
+	font-weight: bold;
+	background-color: #020252;
+	color:white;
+	padding:5px 10px;
+	text-align: center;
+}
+
+#tabelaMonitora tr td{
+	padding:5px 10px;
+	text-align: center;
+	cursor: pointer;
+}
+
+/**Cores**/
+#tabelaMonitora tr:nth-child(odd){
+	background-color: #eee;
+}
+
+/**Cor quando passar por cima**/
+#tabelaMonitora tr:hover td{
+	background-color: #FFD700;
+}

@@ -1,0 +1,59 @@
+Sistema clínica de piscicologia
+
+Cadastro de estagiário{
+    matrícula[6]
+    módulo[10]
+    disciplinas_cursadas[]
+    area_de_interesse
+    disponibilidade (dias e horários)  
+}
+
+Cadastro de professor{
+    número_de_identificação[6]
+    areas_de_interesse
+    estagiarios_supervisionados
+    disponibilidade (dias e horários) 
+}
+
+//FAZER PRIMEIRO
+cadastro de pacientes{
+    nome[50]
+    filiacao
+    data_de_nascimento
+    genero
+    estado_civil
+    cidade
+    endereco
+    telefone
+    email
+    profissao-
+    escolaridaden-
+    data_inicio_tratamento
+    sessoes_necessarias
+}
+
+---------------------------------------------
+Da interface do sistema
+
+paciente {
+    Nome
+    Data de nascimento
+    Genero
+    Estado civil
+    Cidade
+    Cep
+    Telefone
+    Email
+}
+
+
+consulta {
+
+    pessoa
+    data
+    horario
+            
+}
+
+
+

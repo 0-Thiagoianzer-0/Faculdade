@@ -10,7 +10,7 @@ I carried out practical projects covering the contents of each semester, each pr
 <ul>
   <li>First</li>
   <li>Second</li>
-  <li>third</li>
+  <li>Third</li>
   <li>Fourth</li>
   <li>Fifth</li>
   <li>Sixth</li>
